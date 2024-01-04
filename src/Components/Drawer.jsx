@@ -11,7 +11,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import { Link } from 'react-router-dom';
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
     left: false,
@@ -33,7 +33,7 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['PRODUCTS', 'STOCKS AVAILABLE', 'TRANSPORT', 'CART'].map((text, index) => (
+        {[<Link to='/DashBoard'>DashBoard</Link>, 'INVENTORY', 'ORDERS', 'CUSTOMERS'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
